@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Legenda 5 Pahlawan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="overlay" id="overlay" onclick="closeDetail()"></div>
+
+    <div class="dashboard-header">
+        <h1>Legenda 5 Pahlawan Raccoon City</h1>
+        <p>Pilih salah satu pahlawan untuk melihat kisah misinya.</p>
+    </div>
+
+    <div class="container">
+
+        <div class="hero-card" onclick="showDetail('leonom')">
+            <img src="img/leonom.jpg">
+            <h3>LEONOM</h3>
+        </div>
+
+        <div class="hero-card" onclick="showDetail('rusdiwong')">
+            <img src="img/rusdiwong.jpg">
+            <h3>RUSDIWONG</h3>
+        </div>
+
+        <div class="hero-card" onclick="showDetail('movicris')">
+            <img src="img/movicris.jpg">
+            <h3>MOVICRIS</h3>
+        </div>
+
+        <div class="hero-card" onclick="showDetail('fetluis')">
+            <img src="img/fetluis.jpg">
+            <h3>FETLUIS</h3>
+        </div>
+
+        <div class="hero-card" onclick="showDetail('hadiwesker')">
+            <img src="img/hadiwesker.jpg">
+            <h3>HADIWESKER</h3>
+        </div>
+
+    </div>
+
+    <div class="detail-box" id="detailBox">
+        <button class="close-btn" onclick="closeDetail()">X</button>
+        <img id="detailImg">
+        <h2 id="detailTitle"></h2>
+        <p id="detailText"></p>
+    </div>
+
+<script>
+function showDetail(hero) {
+
+    const box = document.getElementById("detailBox");
+    const overlay = document.getElementById("overlay");
+    const img = document.getElementById("detailImg");
+    const title = document.getElementById("detailTitle");
+    const text = document.getElementById("detailText");
+
+    overlay.style.display = "block";
+    box.style.display = "block";
+
+    if(hero === "leonom"){
+        img.src = "img/leonom.jpg";
+        title.innerText = "LEONOM";
+        text.innerText = "Leonom dikenal sebagai otak strategi tim. Jarang bicara, tapi sekali ngomong langsung jadi keputusan final. Dalam Operasi Silent Horizon tahun 2022, ia memilih bertahan di posisi terakhir agar timnya bisa mundur dengan aman. Katanya sih “cuma sebentar”, tapi ternyata itu jadi aksi paling berani dalam hidupnya.";
+    }
+
+    if(hero === "rusdiwong"){
+        img.src = "img/rusdiwong.jpg";
+        title.innerText = "RUSDIWONG";
+        text.innerText = "Rusdiwong selalu jadi yang paling depan, entah karena berani atau terlalu semangat. Dalam misi Pertahanan Zona Terakhir tahun 2021, ia tetap memimpin saat situasi makin sulit. Ia memilih bertahan demi memberi waktu bagi timnya menyelesaikan misi. Semangatnya mungkin berlebihan, tapi keberaniannya tidak pernah setengah-setengah.";
+    }
+
+    if(hero === "movicris"){
+        img.src = "img/movicris.jpg";
+        title.innerText = "MOVICRIS";
+        text.innerText = "Movicris adalah pengintai tercepat yang selalu tahu situasi sebelum orang lain sadar. Dalam misi Shadow Recon tahun 2023, ia berhasil menemukan jalur aman bagi timnya. Saat memastikan semua sudah keluar, ia tertinggal di belakang. Geraknya cepat, tapi kali ini ia memilih berhenti demi orang lain.";
+    }
+
+    if(hero === "fetluis"){
+        img.src = "img/fetluis.jpg";
+        title.innerText = "FETLUIS";
+        text.innerText = "FetLuis dikenal sebagai pelindung tim. Tidak banyak drama, langsung bertindak. Dalam misi Last Stand Protocol tahun 2020, ia menjadi pertahanan terakhir sampai semua rekan-rekannya selamat. Ia mungkin tidak banyak bicara, tapi tindakannya selalu berbicara lebih keras.";
+    }
+
+    if(hero === "hadiwesker"){
+        img.src = "img/hadiwesker.jpg";
+        title.innerText = "HADIWESKER";
+        text.innerText = "Pada tahun 1950 dalam Operasi Dark Eclipse, Hadiwesker memimpin misi rahasia yang menentukan nasib wilayah utara. Dengan kecerdasan taktis dan ketenangan luar biasa, ia memastikan seluruh tim selamat meski harus mengorbankan dirinya di garis terakhir pertahanan.";
+    }
+}
+
+function closeDetail(){
+    document.getElementById("detailBox").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>
